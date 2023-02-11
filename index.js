@@ -16,8 +16,8 @@ let dataHistory = localStorage.getItem("dataHistory")
   : [];
 
 //try read from local storage, change to number
-let money = null;
-let trueMoney = null;
+let money = 1000000;
+let trueMoney = 1000000;
 
 
 let isShuffling = false;
@@ -246,7 +246,7 @@ const loadMoney = () => {
 };
 renderHistory();
 renderBet();
-loadMoney();
+//loadMoney();
 btnShuffle.addEventListener("click", handleShuffleClick);
 //set volume of audio to 0.1
 audio.volume = 0.2;
