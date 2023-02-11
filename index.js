@@ -16,13 +16,13 @@ let dataHistory = localStorage.getItem("dataHistory")
   : [];
 
 //try read from local storage, change to number
-let money = localStorage.getItem("money") ? Number(localStorage.getItem("money")) : 1000000;
-
+let money = null;
+let trueMoney = null;
 
 
 let isShuffling = false;
 
-let trueMoney = money;
+
 const handleShuffleClick = () => {
   if (isShuffling) return;
   if (trueMoney == 0 && money == 0) {
@@ -236,10 +236,17 @@ const parseMoney = (money) => {
 const randomNumber = () => {
   return Math.floor(Math.random() * dataImages.length);
 };
-
+const loadMoney = () => {
+  if (localStorage.getItem("money")) {
+    money = JSON.parse(localStorage.getItem("money"));
+    trueMoney = money;
+  }
+  //render money
+  renderMoney();
+};
 renderHistory();
 renderBet();
-renderMoney();
+loadMoney();
 btnShuffle.addEventListener("click", handleShuffleClick);
 //set volume of audio to 0.1
 audio.volume = 0.2;
