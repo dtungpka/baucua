@@ -15,9 +15,13 @@ let dataHistory = localStorage.getItem("dataHistory")
   ? JSON.parse(localStorage.getItem("dataHistory"))
   : [];
 
+//try read from local storage
+let money = localStorage.getItem("money") ? localStorage.getItem("money") : 1000000;
+
+
 
 let isShuffling = false;
-let money = localStorage.getItem("money") ? localStorage.getItem("money") : 1000000;
+
 let trueMoney = money;
 const handleShuffleClick = () => {
   if (isShuffling) return;
@@ -216,6 +220,8 @@ const renderHistory = () => {
 const renderMoney = () => {
   const moneyElement = document.querySelector(".money");
   moneyElement.innerHTML = '<H1>Tiền: ' + parseMoney(money) + '</H1>';
+  //save money to local storage
+  localStorage.setItem("money", money);
 };
 const parseMoney = (money) => {
   // 1000000 => 1.000.000
