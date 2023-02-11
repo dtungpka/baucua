@@ -15,8 +15,8 @@ let dataHistory = localStorage.getItem("dataHistory")
   ? JSON.parse(localStorage.getItem("dataHistory"))
   : [];
 
-//try read from local storage
-let money = localStorage.getItem("money") ? localStorage.getItem("money") : 1000000;
+//try read from local storage, change to number
+let money = localStorage.getItem("money") ? Number(localStorage.getItem("money")) : 1000000;
 
 
 
@@ -221,7 +221,7 @@ const renderMoney = () => {
   const moneyElement = document.querySelector(".money");
   moneyElement.innerHTML = '<H1>Tiền: ' + parseMoney(money) + '</H1>';
   //save money to local storage
-  localStorage.setItem("money", trueMoney);
+  localStorage.setItem("money", JSON.stringify(money));
 };
 const parseMoney = (money) => {
   // 1000000 => 1.000.000
