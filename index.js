@@ -17,8 +17,8 @@ let dataHistory = localStorage.getItem("dataHistory")
 
 
 let isShuffling = false;
-let money = 1000000;
-let trueMoney = 1000000;
+let money = localStorage.getItem("money") ? localStorage.getItem("money") : 1000000;
+let trueMoney = money;
 const handleShuffleClick = () => {
   if (isShuffling) return;
   if (trueMoney == 0 && money == 0) {
