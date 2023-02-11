@@ -234,10 +234,10 @@ const parseMoney = (money) => {
 const randomNumber = () => {
   return Math.floor(Math.random() * dataImages.length);
 };
-renderMoney();
+
 renderHistory();
 renderBet();
-
+renderMoney();
 btnShuffle.addEventListener("click", handleShuffleClick);
 //set volume of audio to 0.1
 audio.volume = 0.2;
