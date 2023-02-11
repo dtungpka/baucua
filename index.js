@@ -219,9 +219,11 @@ const renderHistory = () => {
 
 const renderMoney = () => {
   const moneyElement = document.querySelector(".money");
+  //print to console
+  console.log("Tiền: " + parseMoney(trueMoney));
   moneyElement.innerHTML = '<H1>Tiền: ' + parseMoney(money) + '</H1>';
   //save money to local storage
-  localStorage.setItem("money", JSON.stringify(money));
+  localStorage.setItem("money", JSON.stringify(trueMoney));
 };
 const parseMoney = (money) => {
   // 1000000 => 1.000.000
