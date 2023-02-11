@@ -221,7 +221,7 @@ const renderMoney = () => {
   const moneyElement = document.querySelector(".money");
   moneyElement.innerHTML = '<H1>Tiền: ' + parseMoney(money) + '</H1>';
   //save money to local storage
-  localStorage.setItem("money", money);
+  localStorage.setItem("money", trueMoney);
 };
 const parseMoney = (money) => {
   // 1000000 => 1.000.000
