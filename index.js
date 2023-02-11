@@ -193,7 +193,7 @@ const renderBet = () => {
   });
 };
 renderBet();
-
+localStorage.setItem("money", JSON.stringify(money));
 const saveHistory = (img1, img2, img3) => {
   dataHistory.unshift([img1, img2, img3]);
   if (dataHistory.length > 10) {
