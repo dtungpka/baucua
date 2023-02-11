@@ -239,8 +239,13 @@ const randomNumber = () => {
 const loadMoney = () => {
   if (localStorage.getItem("money")) {
     money = JSON.parse(localStorage.getItem("money"));
-    trueMoney = money;
+   
   }
+  else {
+    money = 1000000;
+    
+  }
+  trueMoney = money;
   //render money
   renderMoney();
 };
