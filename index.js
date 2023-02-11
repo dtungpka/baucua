@@ -192,7 +192,7 @@ const renderBet = () => {
     }
   });
 };
-renderBet();
+
 localStorage.setItem("money", JSON.stringify(money));
 const saveHistory = (img1, img2, img3) => {
   dataHistory.unshift([img1, img2, img3]);
@@ -234,7 +234,9 @@ const parseMoney = (money) => {
 const randomNumber = () => {
   return Math.floor(Math.random() * dataImages.length);
 };
+renderMoney();
 renderHistory();
+renderBet();
 
 btnShuffle.addEventListener("click", handleShuffleClick);
 //set volume of audio to 0.1
